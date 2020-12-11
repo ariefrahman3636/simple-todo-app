@@ -1,0 +1,33 @@
+.inputText {
+    padding: 10px 5px;
+    margin-right: 20px;
+    border: 1px solid #000000;
+    border-radius: 10px;
+}
+
+.inputDate {
+    padding: 8px 10px;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.submitBtn {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    padding: 10px 15px;
+    border: 1.2px solid teal;
+    border-radius: 10px;
+    background-color: transparent;
+    color: teal;
+    font-weight: 800;
+    cursor: pointer;
+    letter-spacing: 0.2rem;
+    margin-bottom: 20px;
+}
+
+.submitBtn:hover {
+    background-color: teal;
+    color: white;
+    border: transparent;
+}

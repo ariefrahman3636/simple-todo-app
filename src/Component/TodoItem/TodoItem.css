@@ -1,0 +1,35 @@
+.todoItem {
+    list-style-type: none;
+    padding: 17px 0px;
+    border-bottom: 1px solid #eaeaea;
+    margin-left: 500px;
+    margin-right: 500px;
+}
+
+.inputCheckbox {
+    padding: 10px 101px;
+    float: left;
+}
+
+.date {
+    margin-left: 20px;
+    color: rgb(22, 100, 92);
+}
+
+button {
+    float: right;
+    outline: none;
+    padding: 5px 10px;
+    background-color:white;
+    color: tomato;
+    border: 1px solid tomato;
+    border-radius: 10px;
+    font-weight: 800;
+    cursor: pointer;
+}
+button:hover {
+    background-color: tomato;
+    color: white;
+    border: transparent;
+}
+
