@@ -3,8 +3,7 @@ import './InputTodo.css';
 
 class InputTodo extends Component {
     state = {
-        title: '',
-        date: new Date()
+        title: ''
     }
 
     onChange = e => {
@@ -18,8 +17,7 @@ class InputTodo extends Component {
         e.preventDefault();
         this.props.todoHandler(this.state.title)
         this.setState({
-            title: '',
-            date: new Date()
+            title: ''
         })
     }
 
@@ -35,15 +33,7 @@ class InputTodo extends Component {
                         name='title'
                         onChange={this.onChange}
                         maxLength='100'
-                        required
-                         />
-                    <input 
-                        className='inputDate'
-                        name="date" 
-                        type="date" 
-                        value={this.state.date}
-                        onChange={this.onChange}
-                        required
+                        
                          />
                     <input 
                         type='submit' 

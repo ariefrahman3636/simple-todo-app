@@ -1,21 +1,16 @@
 .inputText {
     padding: 10px 5px;
     margin-right: 20px;
+    margin-bottom: 20px;
     border: 1px solid #000000;
     border-radius: 10px;
 }
 
-.inputDate {
-    padding: 8px 10px;
-    border: 1px solid #000000;
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
 .submitBtn {
-    display: flex;
+    display: inline;
     align-items: center;
     margin: auto;
-    padding: 10px 15px;
+    padding: 10px 10px;
     border: 1.2px solid teal;
     border-radius: 10px;
     background-color: transparent;

@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import TodosList from '../TodosList/TodosList';
 import Header from '../Header/Header';
 import InputTodo from '../InputTodo/InputTodo';
+import axios from 'axios';
 
 class TodoContainer extends Component {
     state = {
-        todos: [
-            { id: Math.floor(Math.random() * 1000), title: 'Simple App Todo', date: new Date(), completed: false },
-        ] 
+        todos: [ ],
+        show: false
       }
     
       todoChangeHandler = (id) => {
@@ -18,38 +18,44 @@ class TodoContainer extends Component {
               }
               return x;
             }),
+            show: !this.state.show
         });
       };
-
+// Making a Delete Request
       deleteHandler = (id) => {
-        this.setState({
+        axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`)
+        .then(response => this.setState({
           todos: [
             ...this.state.todos.filter(x => {
               return x.id !== id;
             })
           ]
-        })
+        }) 
+      )
+        
         console.log('works', id);
       }
-     
+// Making a POST request     
       AddTodoHandler = (title) => {
-      const newTodo = {
-        id: Math.floor(Math.random() * 1000),
+      axios.post('https://jsonplaceholder.typicode.com/posts',{
         title: title,
-        date: new Date(),
         completed: false
-      }
-      this.setState({
-        todos: [...this.state.todos, newTodo]
       })
+      .then(response => this.setState({
+        todos: [...this.state.todos, response.data]
+      }) )
         }
-
-    
+// Making a GET request
+    componentDidMount() {
+      axios.get('https://jsonplaceholder.typicode.com/todos?_limit=15')
+        .then(response => this.setState({todos: response.data}))
+    }
 
     render() {
         return (
             <div>
-                <Header />
+                <Header
+                  headerShow={this.state.show} />
                 <InputTodo
                   todoHandler={this.AddTodoHandler} />
                 <TodosList 
